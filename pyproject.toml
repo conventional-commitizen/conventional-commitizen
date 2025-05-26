@@ -1,0 +1,17 @@
+[project]
+name = "conventional-commitizen"
+version = "0.1.0"
+description = "A combination of two awesome commit linting tools written in python."
+readme = "README.md"
+authors = [
+    { name = "Luke Nonas-Hunter", email = "luke@nonas-hunter.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+conventional-commitizen = "conventional_commitizen:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
