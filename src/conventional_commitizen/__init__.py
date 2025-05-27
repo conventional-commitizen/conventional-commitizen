@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from conventional-commitizen!")
+"""Main module for conventional-commitizen."""
