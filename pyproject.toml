@@ -15,3 +15,27 @@ conventional-commitizen = "conventional_commitizen:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[project.entry-points."conventional-commitizen.parsers"]
+generic = "conventional_commitizen.parsers:GenericParser"
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.11.11",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "D", "N", "DOC", "W", "ANN", "PL"]
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 80
+
+[tool.ruff]
+preview = true
+line-length = 80
