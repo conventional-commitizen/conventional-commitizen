@@ -1,0 +1,80 @@
+site_name: Conventional Commitizen
+site_description: A combination of two awesome commit linting tools, Conventional Commits and Commitizen.
+repo_name: conventional-commitizen/conventional-commitizen
+repo_url: https://github.com/conventional-commitizen/conventional-commitizen
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+extra_css:
+- stylesheets/extra.css
+
+nav:
+- Home: index.md
+- API: reference/
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - mike
+  - minify:
+      minify_html: true
+  - gen-files:
+      scripts:
+      - scripts/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
+  - coverage:
+      page_path: coverage
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            docstring_options:
+              ignore_init_summary: true
+            docstring_section_style: list
+            heading_level: 1
+            inherited_members: true
+            merge_init_into_class: true
+            parameter_headings: true
+            separate_signature: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_source: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.snippets:
+      check_paths: true
+      base_path:
+        - .
+        - docs/.snippets
+  - pymdownx.tilde
